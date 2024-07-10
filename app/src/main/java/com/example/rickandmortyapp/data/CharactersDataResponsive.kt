@@ -3,13 +3,14 @@ package com.example.rickandmortyapp.data
 import com.google.gson.annotations.SerializedName
 
 data class CharactersDataResponsive(
-    @SerializedName ("info") val info:infoCharacters ,
-    @SerializedName("results") val results:List<reultsCharacters>
+    //@SerializedName ("info") val info:infoCharacters ,
+    @SerializedName("results") val results:List<ResultCharacters>
 ) {}
 
-data class reultsCharacters(
+data class ResultCharacters(
     @SerializedName("id") val id:Int,
-    @SerializedName("name") val name:String
+    @SerializedName("name") val name:String,
+    @SerializedName("image") val image:String
 ){}
 
 data class infoCharacters(
