@@ -1,6 +1,7 @@
 package com.example.rickandmortyapp.adapters
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,8 +10,9 @@ import com.example.rickandmortyapp.databinding.ItemCharacteresBinding
 import com.squareup.picasso.Picasso
 
 
-class CharactersAdapter (private var items: List<ResultCharacters> = listOf(),
-                         private val onClickListener: (position:Int) -> Unit
+
+class CharactersAdapter (private var dataSet: List<ResultCharacters> = emptyList(),
+                         private val onItemClickListener: (Int) -> Unit
     ) : RecyclerView.Adapter<CharacteresViewHolder>(){
 
 
@@ -23,16 +25,15 @@ class CharactersAdapter (private var items: List<ResultCharacters> = listOf(),
     }
 
 
-        override fun getItemCount(): Int = items.size
+        override fun getItemCount(): Int = dataSet.size
 
     override fun onBindViewHolder(holder: CharacteresViewHolder, position: Int) {
-        holder.render(items[position])
-        holder.itemView.setOnClickListener { onClickListener(position) }
+        holder.render(dataSet[position])
+        holder.itemView.setOnClickListener { onItemClickListener(position) }
     }
 
-    fun updateItems(results: List<ResultCharacters>) {
-        items = results
-        notifyDataSetChanged()
+    fun updateData(dataSet: List<ResultCharacters>) {
+       this.dataSet = dataSet
     }
 }
 

@@ -6,16 +6,17 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rickandmortyapp.adapters.CharactersAdapter
 import com.example.rickandmortyapp.R
+import com.example.rickandmortyapp.User_Activity
 import com.example.rickandmortyapp.data.RetrofitService
 import com.example.rickandmortyapp.data.ResultCharacters
 import com.example.rickandmortyapp.databinding.ActivityMainBinding
 import com.example.rickandmortyapp.utils.RetrofitProvider
+import com.example.rickandmortyapp.utils.UserPref
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,24 +24,33 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var adapter: CharactersAdapter
-    private var charactrsList:List<ResultCharacters> = listOf()
-
+   lateinit var binding: ActivityMainBinding
+   lateinit var adapter: CharactersAdapter
+    lateinit var charactrsList:List<ResultCharacters>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        //setContentView(R.layout.activity_main)
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = CharactersAdapter(emptyList()) {
+        charactrsList = emptyList()
 
-        }
+        adapter = CharactersAdapter(charactrsList) {position ->  navigateToDetail(charactrsList[position])}
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
+       val bntir = binding.btnSub
+
+        bntir.setOnClickListener {
+            val intent = Intent(this, User_Activity::class.java)
+            startActivity(intent)
+        }
+
+
+
     }
 
 
@@ -72,9 +82,9 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun navigateToDetail(characters: ResultCharacters) {
-        //Toast.makeText(this, superhero.name, Toast.LENGTH_SHORT).show()
+
         val intent = Intent(this, Detail::class.java)
-        intent.putExtra("CHARACTER_ID", characters.id)
+        intent.putExtra("EXTRA_ID", characters.id)
         startActivity(intent)
     }
 
@@ -99,9 +109,10 @@ class MainActivity : AppCompatActivity() {
             runOnUiThread {
 
                 if (response.isSuccessful) {
+                    Log.i("HTTP", "$response :(")
                     Log.i("HTTP", "respuesta correcta :)")
                     charactrsList = response.body()?.results.orEmpty()
-                    adapter.updateItems(charactrsList)
+                    adapter.updateData(charactrsList)
 
                 } else {
                     Log.i("HTTP", "respuesta erronea :(")

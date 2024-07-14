@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,16 +7,89 @@
     tools:context=".activities.Detail">
 
 
-    <TextView
-        android:id="@+id/txtDetailTextName"
-        android:text="name"
+    <ImageView
+        android:id="@+id/imgCharacterDetail"
+        android:layout_width="300dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="36dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/guideHorizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideHorizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="396dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideHorizontalTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52667576" />
 
 
 
 
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/txtDetailName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NombrePersonajePorId"
+        android:textSize="25dp"
+
+        app:layout_constraintTop_toTopOf="@id/guideHorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideHorizontalTwo"
+
+
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"
+        android:id="@+id/txtGenderDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GenneroDetail"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideHorizontalTwo"
+        />
+
+    <TextView
+        android:id="@+id/txtStatusDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estatus"
+        android:textSize="25dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtGenderDetail"
+        app:layout_constraintBottom_toTopOf="@id/txtSpeciesDetail"
+
+        />
+
+    <TextView
+        android:layout_marginStart="10dp"
+        android:id="@+id/txtSpeciesDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SpecieDetail"
+        android:textSize="25dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtStatusDetail"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+         />
 
 
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
