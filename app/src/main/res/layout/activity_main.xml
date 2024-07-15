@@ -11,7 +11,7 @@
 
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideHorizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guideHorizontalOne"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         android:id="@+id/btnSub"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideHorizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guideHorizontalOne"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         tools:layout_editor_absoluteY="116dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideHorizontal"
+        android:id="@+id/guideHorizontalOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideHorizontal"
+        app:layout_constraintTop_toBottomOf="@id/guideHorizontalOne"
         app:layout_constraintVertical_bias="1.0" />
 
 

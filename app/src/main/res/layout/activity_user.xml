@@ -5,11 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User_Activity">
+    tools:context=".UserActivity">
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideHorizontalTres"
+        android:id="@+id/guideHorizontalThree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -52,7 +52,7 @@
 
 
     <EditText
-        android:id="@+id/MynameUser"
+        android:id="@+id/edit_text_name"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="@id/guideHorizontalUno"
         app:layout_constraintStart_toStartOf="@id/guideVertical"
@@ -71,7 +71,8 @@
         android:layout_height="wrap_content"/>
 
     <EditText
-
+        android:inputType="textEmailAddress"
+        android:id="@+id/mail"
         android:layout_marginBottom="12dp"
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -81,17 +82,16 @@
 
 
     <EditText
-        android:id="@+id/correo"
+        android:inputType="number"
+        android:id="@+id/phone"
         android:layout_width="250dp"
         android:layout_height="41dp"
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideHorizontalTres"
+        app:layout_constraintBottom_toBottomOf="@id/guideHorizontalThree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/guideVertical" />
 
     <TextView
-        android:inputType="phone"
-        android:id="@+id/telefono"
         android:layout_width="260dp"
         android:layout_height="52dp"
         android:layout_marginStart="60dp"
@@ -134,20 +134,20 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/guideHorizontalCuatro"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideHorizontalTres"
+        app:layout_constraintTop_toTopOf="@id/guideHorizontalThree"
         app:layout_constraintVertical_bias="0.876" />
 
     <TextView
+        android:layout_width="104dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="15dp"
-        android:layout_width="114dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="20dp"
         android:text="Telefono"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@id/guideHorizontalTres"
+        app:layout_constraintBottom_toBottomOf="@id/guideHorizontalThree"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideHorizontalDos"
-        app:layout_constraintVertical_bias="0.686" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <CheckBox
         android:id="@+id/checkBox"

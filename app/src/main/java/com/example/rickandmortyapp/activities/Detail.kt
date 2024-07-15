@@ -1,7 +1,9 @@
 package com.example.rickandmortyapp.activities
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.rickandmortyapp.R
 import com.example.rickandmortyapp.data.CharactersDataResponsive
 import com.example.rickandmortyapp.data.ResultCharacters
 import com.example.rickandmortyapp.data.RetrofitService
@@ -31,8 +33,6 @@ class Detail : AppCompatActivity() {
         getById(id)
 
 
-
-
     }
 
     private fun loadData() {
@@ -44,12 +44,26 @@ class Detail : AppCompatActivity() {
         binding.txtSpeciesDetail.text = character.species
 
 
+        val gender = character.gender
+        val status = character.status
+
+
+        if (status =="live"){
+            binding.imageStatus.setImageResource(R.drawable.vida)
+        }
+
+        if(gender == "Male"){
+            binding.genderImageView.setImageResource(R.drawable.male)
+        }
+        else{
+            binding.genderImageView.setImageResource(R.drawable.female)
+        }
 
 
     }
 
 
-    private fun getById(id: Int){
+    private fun getById(id: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val apiService = getRetrofit().create(RetrofitService::class.java)
@@ -60,6 +74,8 @@ class Detail : AppCompatActivity() {
                 runOnUiThread {
                     Log.i("RESPUESTADETAIL", "${result}")
                     loadData()
+
+
                 }
                 //Log.i("HTTP", "${result.results}")
             } catch (e: Exception) {
@@ -75,8 +91,6 @@ class Detail : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
-
 
 
 }

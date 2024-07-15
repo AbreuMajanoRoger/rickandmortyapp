@@ -10,22 +10,22 @@ import com.example.rickandmortyapp.databinding.ItemCharacteresBinding
 import com.squareup.picasso.Picasso
 
 
-
-class CharactersAdapter (private var dataSet: List<ResultCharacters> = emptyList(),
-                         private val onItemClickListener: (Int) -> Unit
-    ) : RecyclerView.Adapter<CharacteresViewHolder>(){
+class CharactersAdapter(
+    private var dataSet: List<ResultCharacters> = emptyList(),
+    private val onItemClickListener: (Int) -> Unit
+) : RecyclerView.Adapter<CharacteresViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacteresViewHolder {
-        val binding = ItemCharacteresBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemCharacteresBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CharacteresViewHolder(binding)
-
 
 
     }
 
 
-        override fun getItemCount(): Int = dataSet.size
+    override fun getItemCount(): Int = dataSet.size
 
     override fun onBindViewHolder(holder: CharacteresViewHolder, position: Int) {
         holder.render(dataSet[position])
@@ -33,11 +33,13 @@ class CharactersAdapter (private var dataSet: List<ResultCharacters> = emptyList
     }
 
     fun updateData(dataSet: List<ResultCharacters>) {
-       this.dataSet = dataSet
+        this.dataSet = dataSet
+        notifyDataSetChanged()
     }
 }
 
-class CharacteresViewHolder(val binding:ItemCharacteresBinding) : RecyclerView.ViewHolder(binding.root) {
+class CharacteresViewHolder(val binding: ItemCharacteresBinding) :
+    RecyclerView.ViewHolder(binding.root) {
 
     fun render(resultcharacters: ResultCharacters) {
         binding.nameTextView.text = resultcharacters.name

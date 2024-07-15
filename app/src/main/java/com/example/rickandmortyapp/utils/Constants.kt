@@ -2,9 +2,9 @@ package com.example.rickandmortyapp.utils
 
 class Constants {
 
-companion object{
+    companion object {
 
-  const  val API_BASE_URL = "https://rickandmortyapi.com/api/"
-}
+        const val API_BASE_URL = "https://rickandmortyapi.com/api/"
+    }
 
 }

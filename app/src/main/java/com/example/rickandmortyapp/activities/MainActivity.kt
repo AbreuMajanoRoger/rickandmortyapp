@@ -11,12 +11,11 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rickandmortyapp.adapters.CharactersAdapter
 import com.example.rickandmortyapp.R
-import com.example.rickandmortyapp.User_Activity
+import com.example.rickandmortyapp.UserActivity
 import com.example.rickandmortyapp.data.RetrofitService
 import com.example.rickandmortyapp.data.ResultCharacters
 import com.example.rickandmortyapp.databinding.ActivityMainBinding
 import com.example.rickandmortyapp.utils.RetrofitProvider
-import com.example.rickandmortyapp.utils.UserPref
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,9 +23,9 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
 
-   lateinit var binding: ActivityMainBinding
-   lateinit var adapter: CharactersAdapter
-    lateinit var charactrsList:List<ResultCharacters>
+    lateinit var binding: ActivityMainBinding
+    lateinit var adapter: CharactersAdapter
+    lateinit var charactrsList: List<ResultCharacters>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,15 +36,15 @@ class MainActivity : AppCompatActivity() {
 
         charactrsList = emptyList()
 
-        adapter = CharactersAdapter(charactrsList) {position ->  navigateToDetail(charactrsList[position])}
+        adapter =
+            CharactersAdapter(charactrsList) { position -> navigateToDetail(charactrsList[position]) }
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
-       val bntir = binding.btnSub
 
-        bntir.setOnClickListener {
-            val intent = Intent(this, User_Activity::class.java)
+        binding.btnSub.setOnClickListener {
+            val intent = Intent(this, UserActivity::class.java)
             startActivity(intent)
         }
 
@@ -61,6 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         return true
     }
+
     private fun initSearchView(searchItem: MenuItem?) {
         if (searchItem != null) {
             var searchView = searchItem.actionView as SearchView
@@ -80,21 +80,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     private fun navigateToDetail(characters: ResultCharacters) {
 
         val intent = Intent(this, Detail::class.java)
         intent.putExtra("EXTRA_ID", characters.id)
         startActivity(intent)
     }
-
-
-
-
-
-
-
-
 
 
     private fun searchByName(query: String) {
@@ -116,13 +107,15 @@ class MainActivity : AppCompatActivity() {
 
                 } else {
                     Log.i("HTTP", "respuesta erronea :(")
-                    Toast.makeText(this@MainActivity, "Hubo un error inesperado, vuelva a intentarlo más tarde", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Hubo un error inesperado, vuelva a intentarlo más tarde",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
         }
     }
-
-
 
 
 }
