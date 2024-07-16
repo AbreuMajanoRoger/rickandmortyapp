@@ -43,6 +43,30 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.11" />
 
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/txtfield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideVertical"
         android:layout_width="wrap_content"
@@ -59,6 +83,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="250dp"
         android:layout_height="wrap_content"/>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/textField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pruebatexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 
     <EditText
@@ -96,7 +138,7 @@
         android:layout_height="52dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="32dp"
-        android:text="Suscripcion a noticias"
+        android:text="@string/subscription"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.351"
@@ -108,29 +150,29 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="15dp"
-        android:text="Nombre"
+        android:text="@string/name"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/guideHorizontalUno"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:layout_marginBottom="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Apellido"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/lastName"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/guideHorizontalDos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideHorizontalUno"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintVertical_bias="0.833" />
 
     <TextView
         android:layout_marginBottom="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="Correo"
+        android:text="@string/email"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/guideHorizontalCuatro"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,33 +184,49 @@
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="15dp"
-        android:text="Telefono"
+        android:text="@string/phone"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/guideHorizontalThree"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideHorizontalDos"
         app:layout_constraintVertical_bias="1.0" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirmar datos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideHorizontalCuatro"
-
-        />
 
     <Button
+        android:textSize="20dp"
+        android:layout_marginEnd="20dp"
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar"
+        android:layout_marginStart="144dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btncancelData"
         app:layout_constraintTop_toTopOf="@id/guideHorizontalCuatro"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <Button
+       android:textSize="20dp"
+        android:id="@+id/btncancelData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideHorizontalCuatro"
+        app:layout_constraintVertical_bias="0.503" />
+
+
+    <ImageView
+        android:id="@+id/iconInfo"
+        android:layout_width="69dp"
+        android:layout_height="62dp"
+        android:src="@drawable/icon_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideVertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontalCuatro" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,7 +22,6 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
-
     lateinit var binding: ActivityMainBinding
     lateinit var adapter: CharactersAdapter
     lateinit var charactrsList: List<ResultCharacters>
@@ -50,6 +49,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+        searchByName("a")
     }
 
 

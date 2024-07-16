@@ -3,9 +3,7 @@ package com.example.rickandmortyapp.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Switch
 import com.example.rickandmortyapp.R
-import com.example.rickandmortyapp.data.CharactersDataResponsive
 import com.example.rickandmortyapp.data.ResultCharacters
 import com.example.rickandmortyapp.data.RetrofitService
 import com.example.rickandmortyapp.databinding.ActivityDetailBinding
@@ -44,12 +42,22 @@ class Detail : AppCompatActivity() {
         binding.txtStatusDetail.text = character.status
         binding.txtSpeciesDetail.text = character.species
 
-
+        val  species = character.species
         val gender = character.gender
         val status = character.status
 
+
+
+
+        /*if (species == "Human"){ binding.specieView.setImageResource(R.drawable.human) }
+        else{ binding.specieView.setImageResource(R.drawable.alien_2_svgrepo_com)}*/
+
+
         if (status == "Alive"){ binding.imageStatus.setImageResource(R.drawable.vida) }
         else if ( status =="Dead"){ binding.imageStatus.setImageResource(R.drawable.rip) }
+        else{binding.imageStatus.setImageResource(R.drawable.doubts)
+
+        }
 
         if(gender == "Male"){ binding.genderImageView.setImageResource(R.drawable.male) }
         else if (gender =="Female"){ binding.genderImageView.setImageResource(R.drawable.female) }

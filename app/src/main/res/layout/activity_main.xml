@@ -7,18 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-    <Button
-
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideHorizontalOne"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Desuscribir"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="116dp" />
-
 
     <Button
         android:id="@+id/btnSub"
@@ -37,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24" />
+        app:layout_constraintGuide_percent="0.12" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

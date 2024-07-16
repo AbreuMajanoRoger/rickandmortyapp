@@ -1,4 +1,28 @@
 <resources>
     <string name="menu_search">Search</string>
     <string name="app_name">Hello Human</string>
+    <string name="label" />
+
+    <string name="name">name</string>
+    <string name="lastName">Last Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="email">email</string>
+
+
+    <string name="save">save</string>
+    <string name="delete">delete</string>
+
+    <string name="subscription">subscription</string>
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>
