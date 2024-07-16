@@ -7,51 +7,32 @@
     tools:context=".activities.Detail">
 
 
-    <!--       !!!!!!!Avatar Detail!!!!!!!!!!!!!        -->
-
-
-
-
-
-
+    <!--       !!!!!!!gender Detail!!!!!!!!!!!!!        -->
 
     <ImageView
         android:id="@+id/imgCharacterDetail"
         android:layout_width="300dp"
         android:layout_height="280dp"
         android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="59dp"
         android:background="@color/black"
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
-
-    <!--       !!!!!!!Name Detail!!!!!!!!!!!!!        -->
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtDetailName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="4dp"
+
         android:text="NombrePersonajePorId"
         android:textSize="25dp"
-
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/guideHorizontalOne" />
-
-    <!--       !!!!!!!gender Detail!!!!!!!!!!!!!        -->
-
-    <TextView
-        android:layout_marginTop="20dp"
-        android:textSize="25dp"
-        android:id="@+id/txtGenderDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gender Detail"
-        android:layout_marginStart="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideHorizontalTwo"
-        />
+        app:layout_constraintTop_toBottomOf="@id/guideHorizontalOne" />
 
 
     <!--       !!!!!!!Estatus Detail!!!!!!!!!!!!!        -->
@@ -60,38 +41,48 @@
 
 
     <TextView
+        android:id="@+id/txtGenderDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Gender Detail"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideHorizontalTwo" />
+
+    <TextView
         android:id="@+id/txtStatusDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:text="Estatus"
         android:textSize="25dp"
-        app:layout_constraintTop_toTopOf="@id/guideHorizontalThree"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtGenderDetail"
 
-        />
-
+        app:layout_constraintTop_toTopOf="@id/guideHorizontalThree" />
 
     <TextView
         android:id="@+id/txtSpeciesDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="SpecieDetail"
+
+
         android:textSize="25dp"
-
-
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideHorizontalfour"
-        />
+        app:layout_constraintTop_toTopOf="@id/guideHorizontalfour" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideHorizontalOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="563dp" />
+        app:layout_constraintGuide_begin="310dp" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -99,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="487dp" />
+        app:layout_constraintGuide_begin="445dp" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -107,51 +98,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="399dp" />
+        app:layout_constraintGuide_begin="365dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideHorizontalThree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="654dp" />
-
-
-
-
-
-
-
+        app:layout_constraintGuide_begin="555dp" />
 
 
     <ImageView
         android:id="@+id/genderImageView"
 
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="54dp"
+        android:layout_height="45dp"
 
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
         android:src="@drawable/male"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideHorizontalTwo" />
 
-
-
-
-
-
-
-
     <ImageView
         android:id="@+id/imageStatus"
 
+        android:layout_width="51dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
         android:src="@drawable/vida"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideHorizontalThree"
-        />
-
-
+        app:layout_constraintTop_toTopOf="@id/guideHorizontalThree" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.rickandmortyapp.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Switch
 import com.example.rickandmortyapp.R
 import com.example.rickandmortyapp.data.CharactersDataResponsive
 import com.example.rickandmortyapp.data.ResultCharacters
@@ -47,17 +48,11 @@ class Detail : AppCompatActivity() {
         val gender = character.gender
         val status = character.status
 
+        if (status == "Alive"){ binding.imageStatus.setImageResource(R.drawable.vida) }
+        else if ( status =="Dead"){ binding.imageStatus.setImageResource(R.drawable.rip) }
 
-        if (status =="live"){
-            binding.imageStatus.setImageResource(R.drawable.vida)
-        }
-
-        if(gender == "Male"){
-            binding.genderImageView.setImageResource(R.drawable.male)
-        }
-        else{
-            binding.genderImageView.setImageResource(R.drawable.female)
-        }
+        if(gender == "Male"){ binding.genderImageView.setImageResource(R.drawable.male) }
+        else if (gender =="Female"){ binding.genderImageView.setImageResource(R.drawable.female) }
 
 
     }
@@ -75,9 +70,7 @@ class Detail : AppCompatActivity() {
                     Log.i("RESPUESTADETAIL", "${result}")
                     loadData()
 
-
                 }
-                //Log.i("HTTP", "${result.results}")
             } catch (e: Exception) {
                 e.printStackTrace()
             }
